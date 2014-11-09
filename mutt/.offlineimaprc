@@ -1,0 +1,41 @@
+[general]
+accounts = work
+fsync = false
+maxsyncaccounts = 1
+pythonfile = ~/.mutt/offlineimap.py
+
+[Account work]
+autorefresh = 1
+localrepository = local
+remoterepository = remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository local]
+localfolders = ~/.mutt/mail/
+type = Maildir
+
+[Repository remote]
+cert_fingerprint = FINGERPRINT
+idlefolders = ['INBOX']
+remotehost = outlook.office365.com
+remotepasseval = get_pws()
+remoteuser = your@email.address
+ssl = yes
+type = IMAP
+folderfilter = lambda foldername: foldername not in [
+    'Calendar',
+    '/calendar',
+    'Contacts',
+    'drafts',
+    'Journal',
+    'Junk E-Mail',
+    'Notes',
+    'Outbox',
+    'RSS Feeds',
+    'Suggested Contacts',
+    'Sync Issues',
+    'Sync Issues.Conflicts',
+    'Sync Issues.Local Failures',
+    'Sync Issues.Server Failures',
+    'Tasks']

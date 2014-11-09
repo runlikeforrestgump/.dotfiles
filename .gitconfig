@@ -1,0 +1,11 @@
+[user]
+	name = Your Name
+	email = your@email.address
+[push]
+	default = current
+[color]
+	ui = true
+[log]
+	abbrevCommit = true
+[core]
+	autocrlf = input

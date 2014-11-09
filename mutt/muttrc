@@ -1,0 +1,90 @@
+set my_pws=`gpg --no-tty --no-verbose --quiet --decrypt ~/.mutt/pws.gpg`
+ignore *
+unignore from: to: cc: bcc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: bcc: date: subject:
+alternative_order text/plain text/enriched text/html
+auto_view text/calendar
+auto_view text/html
+bind editor \t complete-query
+bind index G last-entry
+bind index gg first-entry
+bind index,pager \cn sidebar-next
+bind index,pager \co sidebar-open
+bind index,pager \cp sidebar-prev
+bind index,pager R group-reply
+bind pager G bottom
+bind pager gg top
+bind pager j next-line
+bind pager k previous-line
+macro index \cg "<shell-escape>offlineimap<enter>"
+macro index ',b' "<enter-command>toggle sidebar_visible<enter><refresh>"
+macro index ',c' "<pipe-message>~/.mutt/parse_remind.pl<enter>"
+macro index \ec "<shell-escape>wyrd ~/.mutt/work.rem<enter>" "Calendar (Wyrd)"
+set my_tprot="t-prot -cemst --bigq -M=mutt"
+macro pager ,@tpoff "<enter-command>\
+    unset display_filter;\
+    macro pager \\e0 ,@tpon<enter><exit><display-message>"
+macro pager ,@tpon "<enter-command>\
+    set display_filter='$my_tprot';\
+    macro pager \\e0 ,@tpoff<enter><exit><display-message>"
+macro pager \e0 ,@tpoff
+macro pager b "<enter-command>toggle sidebar_visible<enter><redraw-screen>"
+#macro index,pager d '<delete-message>$'
+set alias_file="~/.mutt/aliases"
+set beep_new=yes
+set certificate_file="~/.mutt/certificates"
+set crypt_use_gpgme=yes
+set date_format="%b %d"
+set display_filter="$my_tprot"
+set fast_reply=yes
+set folder="~/.mutt/mail/"
+set forward_format="Fwd: %s"
+set from="your@email.address"
+set header_cache="~/.mutt/cache/headers"
+set hide_thread_subject=no
+set index_format="%Z %D %-20.20n (%4c) %s"
+set mail_check=0
+set mailcap_path="~/.mutt/mailcap"
+set markers=no
+set mbox_type=Maildir
+set menu_scroll=yes
+set message_cachedir="~/.mutt/cache/bodies"
+set mime_forward=ask-yes
+set pager_context=3
+set pager_index_lines=11
+set pager_stop=yes
+set pgp_use_gpg_agent=yes
+set postponed="+drafts"
+set query_command="lbdbq '%s'"
+set realname="Your Name"
+set record="+sent"
+set send_charset="utf-8:us-ascii"
+set sendmail="/usr/bin/msmtp -a work"
+set sidebar_visible=yes
+set sidebar_width=20
+set signature="~/.mutt/sig"
+set sleep_time=0
+set sort=threads
+set sort_aux=reverse-last-date-received
+set spoolfile="+INBOX"
+set status_format="-%r-Mutt: %f [Msgs:%m Unread:%u New:%n Old:%o Del:%d Post:%p Flag:%F Tag:%t %l]-%>-(%P)---"
+set text_flowed=yes  # also need to add setlocal fo+=aw to vimrc
+set timeout=1
+set tmpdir="~/.mutt/temp"
+set use_envelope_from=yes
+set user_agent=no
+source ~/.mutt/colours
+mailboxes +INBOX +drafts +sent +templates +search
+
+macro index S \
+    "<enter-command>set nopipe_decode nowait_key<enter>\
+    <shell-escape>notmuch-mutt -o ~/.mutt/mail/search -r --prompt search<enter>\
+    <change-folder-readonly>+search<enter>"\
+    "notmuch: search mail"
+
+macro index <F9> \
+    "<enter-command>set nopipe_decode nowait_key<enter>\
+    <pipe-message>notmuch-mutt -o ~/.mutt/mail/search -r thread<enter>\
+    <change-folder-readonly>+search<enter>"\
+    "notmuch: reconstruct thread"

@@ -1,0 +1,10 @@
+application/ms-tnef; tnef -w %s
+image/*; feh %s; copiousoutput
+text/calendar; ~/.mutt/icalview.rb; copiousoutput
+#text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+text/html; w3m -O utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+application/pdf; mupdf %s; copiousoutput;
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice %s; copiousoutput;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice %s; copiousoutput;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s; copiousoutput;
+application/vnd.oasis.opendocument.spreadsheet; libreoffice %s; copiousoutput;

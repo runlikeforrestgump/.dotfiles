@@ -1,0 +1,13 @@
+%ldap_server_db = (
+    'FOOBAR' => ['ldap://foo.bar.com',
+                   'dc=FOO,dc=BAR',
+                   'givenname sn cn mail',
+                   'givenname sn cn mail',
+                   '${mail}',
+                   '${givenname} ${sn}',
+                   '']
+);
+
+$ignorant = 1;
+$ldap_bind_dn = 'cn=BLAH,cn=users,dc=FOO,dc=BAR';
+$ldap_bind_password = 'PASSWORD';
