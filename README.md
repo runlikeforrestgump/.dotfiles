@@ -81,7 +81,7 @@ What I want in an IDE:
 * Style checking.
 * Syntax checking.
 * Syntax highlighting.
-* And probably other things.
+* And other things that would make me more productive.
 
 What I use:
 * [commentary](https://github.com/tpope/vim-commentary): for commenting and uncommenting code.
