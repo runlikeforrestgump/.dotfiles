@@ -36,7 +36,7 @@ mutt
 What I use:
 * [lbdb](https://www.spinnaker.de/lbdb/): for querying LDAP for email addresses.
 * [Msmtp](http://msmtp.sourceforge.net/): an SMTP client.
-* [mutt-sidebar](http://www.lunar-linux.org/mutt-sidebar/): a mail folders list.
+* [mutt-sidebar](http://www.lunar-linux.org/mutt-sidebar/): for showing a list of mail folders.
 * [notmuch](http://notmuchmail.org/): a mail indexer and searcher.
 * [OfflineIMAP](http://offlineimap.org/): a mail retriever.
 * [remind](http://www.roaringpenguin.com/products/remind): a calendar and alarm.
