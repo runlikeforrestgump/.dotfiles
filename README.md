@@ -64,7 +64,7 @@ If meeting invitations from Office365 show up as links to Outlook Web Access (OW
 vim
 ===
 
-I'd like Vim to be a powerful IDE for C, C++, CSS, HTML, Java, JavaScript, JSON, Perl, Python, Ruby, Scala, XML, etc. I haven't found a satisfactory setup for Vim yet.
+I'd like Vim to be a powerful IDE for C, C++, CSS, HTML, Java, JavaScript, JSON, Markdown, Perl, Python, Ruby, Scala, XML, etc. I haven't found a satisfactory setup for Vim yet.
 
 What I want in an IDE:
 * Automatically add headers for things that are used in the file.
