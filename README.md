@@ -14,6 +14,7 @@ What I Use
 * [dwm](http://dwm.suckless.org/): a dynamic window manager.
 * [feh](http://feh.finalrewind.org/): an image viewer.
 * [GNU GRUB](https://www.gnu.org/software/grub/): a boot loader.
+* [GNU Screen](https://www.gnu.org/software/screen/): a terminal multiplexer.
 * [GNU Unifont](http://unifoundry.com/unifont.html): a Unicode bitmap font.
 * [GNU Units](https://www.gnu.org/software/units/): a unit converter.
 * [HexChat](https://hexchat.github.io/): an IRC client.
