@@ -64,19 +64,28 @@ If meeting invitations from Office365 show up as links to Outlook Web Access (OW
 vim
 ===
 
-I'd like Vim to be a powerful IDE for C, C++, CSS, HTML, Java, JavaScript, JSON, Markdown, Perl, Python, Ruby, Scala, XML, etc. I haven't found a satisfactory setup for Vim yet.
+I'd like Vim to be a powerful IDE for C, C++, CSS, HTML, Java, JavaScript, JSON, Markdown, Perl, Python, Ruby, Scala, XML, etc. I've been using Vim for years for all my text editing needs, but I'm far from having a setup that suits all my needs. Sure, if all I did was Python development, then there's lots of plugins out there to make Vim a great Python IDE; however, I don't just do Python.
+
+I did try switching from Vim to Emacs for all my text editing needs a few years ago; however, I think that was a bad idea. My biggest complaint was that Emacs was slow to load. I love Vim because I can quickly open, edit, and close a file. I assume the problem was me, not Emacs. I assume that I should treat Emacs like I would treat any IDE: I shouldn't expect to use an IDE as something that I open and close frequently. If I can't turn Vim into an ultimate IDE, then I plan to use Emacs as an IDE (and treat it as such) and use Vim for quickly editing files (and maybe even use it as an IDE for some languages).
 
 What I want in an IDE:
 * Automatically add headers for things that are used in the file.
 * Code completion that shows docs for possible completions, so that I can make an informed choice.
+* Code generation for typical things such as getters and setters.
+* Code searching.
 * Comment templates that are automatically inserted when I start typing a comment before a function or class.
+* Debugger.
 * File explorer.
 * Fuzzy file opening.
+* Highlight unused headers and provide an option to delete them.
 * Jump to declaration.
 * Jump to definition.
-* Powerful refactoring tools (mainly renaming or moving).
+* Powerful refactoring tools (mainly renaming and moving, and deleting whole things, such as classes, functions, structs).
+* Provide a way to show the documentation for a given function/class/whatever.
+* Quickly comment or uncomment any arbitrary set of lines.
 * Remove trailing whitespace.
-* See what uses a function.
+* Run tests.
+* See what uses a function (show a list of call sites).
 * Show SCM blame data for each line.
 * Show what lines have been added, modified, or removed.
 * Style checking.
